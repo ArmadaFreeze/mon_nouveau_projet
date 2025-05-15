@@ -144,6 +144,20 @@ nav a {
   padding: 2em;
 }
 
+.headerlogo{
+      display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 35px;
+    border: solid;
+    border-radius: 20px;
+}
+
 .video-promo video {
   width: 100%;
   max-width: 50%;
@@ -175,12 +189,6 @@ footer {
     transform: scale(1.5) translate(-34%, -34%);
   }
 }
-
-
-
-
-
-@media (max-width: 1024px) {}
 
 
 
