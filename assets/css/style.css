@@ -4,10 +4,25 @@
   box-sizing: border-box;
 }
 
-.root {
-  background-color: #f5af7a !important;
-  /* Replace with your desired color */
+:root {
+  /* Couleurs principales */
+  --color-primary: #f5af7a;
+  --color-secondary: #c68553;
+  --color-accent: #F5A623;
+
+  /* Couleurs de fond */
+  --color-background: #f5af7a;
+  --color-hero-background: #f0f4f8;
+
+  /* Couleurs de texte */
+  --color-text: #333333;
+  --color-text-light: #777777;
+
+  /* Autres */
+  --color-border: #e0e0e0;
+  --color-shadow: rgba(0, 0, 0, 0.1);
 }
+
 
 
 body {
@@ -18,7 +33,7 @@ body {
 }
 
 header {
-  background-color: #e91e63;
+  background-color: var(--color-background);
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -38,20 +53,14 @@ nav ul {
   overflow: hidden;
 }
 
-.hero::before {
-    content: "";
+.hero img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../images/bg.jpg);
-    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: scale(1.5) translate(-34%, -34%);
     z-index: -1;
-    transform: scale(2.5);
     filter: blur(5px);
-    animation: slideBackground 6s linear infinite;
-    background-size: contain;
+    animation: slideBackground 30s ease-in-out infinite;
 }
 
 nav a {
@@ -79,11 +88,16 @@ nav a {
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #e91e63;
+  background: var(--color-background);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  border-radius: 8px;
+  transition: border-radius 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  border-radius: 12px;
+  background: var(--color-secondary);
 }
 
 .causer {
@@ -115,10 +129,10 @@ nav a {
 }
 
 .produit img {
-    width: 100%;
-    border: 4px solid #f5af7a;
-    height: 80%;
-    border-radius: 5px;
+  width: 100%;
+  border: 4px solid #f5af7a;
+  height: 80%;
+  border-radius: 5px;
 }
 
 .video-promo {
@@ -145,17 +159,16 @@ footer {
 }
 
 
-/* Animation keyframes */
 @keyframes slideBackground {
   0% {
-    background-position: 50% 0;
+    transform: scale(1.5) translate(-34%, -34%);
   }
 
   50% {
-    background-position: 51% 0;
+    transform: scale(1.5) translate(-30%, -34%);
   }
 
   100% {
-    background-position: 50% 0;
+    transform: scale(1.5) translate(-34%, -34%);
   }
 }
